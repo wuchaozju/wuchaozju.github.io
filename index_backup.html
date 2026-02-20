@@ -8,6 +8,13 @@
   gtag('js', new Date());
   gtag('config', 'G-27PSY3NYRL');
 </script>
+<style>
+  .pub-year-header {
+    list-style: none;
+    margin: 14px 0 6px -20px;
+    font-weight: bold;
+  }
+</style>
 <TITLE>Chao Wu - Ph D, Research Professor@ZJU</TITLE>
 </HEAD>
 <BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000A3" VLINK="#760076" ALINK="#FF0000">
@@ -74,7 +81,7 @@ His main research interests is about distributed machine learning, privacy prote
 </ul> 
 
 <b>Recent publications (full list: <a href="https://scholar.google.com/citations?user=gpTPt58AAAAJ&hl=zh-CN">Google Scholar Page</a>):</b>
-<ul>
+<ul id="publications-list">
 
 <li>
 Lu, C., Guo, C., Li, Z., Wu, C., Liu, T., & Lu, Y. (2026). Multi-graph based neural architecture search for robust recommendation. CoRR.
@@ -327,6 +334,89 @@ For the <b> Public Affairs College:</b>
 </tr>
 </table>
 </center>
+<script>
+  (function () {
+    function extractYear(text) {
+      var matches = text.match(/\b(19|20)\d{2}\b/g);
+      if (!matches) {
+        return null;
+      }
+      for (var i = 0; i < matches.length; i++) {
+        var year = parseInt(matches[i], 10);
+        if (year >= 1900 && year <= 2100) {
+          return year;
+        }
+      }
+      return null;
+    }
+
+    function groupPublicationsByYear() {
+      var list = document.getElementById("publications-list");
+      if (!list) {
+        return;
+      }
+
+      var items = Array.prototype.slice.call(list.children).filter(function (node) {
+        return node.tagName === "LI";
+      });
+      if (!items.length) {
+        return;
+      }
+
+      var groups = {};
+      var years = [];
+      var others = [];
+
+      items.forEach(function (item) {
+        var text = (item.textContent || "").replace(/\s+/g, " ").trim();
+        if (!text) {
+          return;
+        }
+        var year = extractYear(text);
+        if (year === null) {
+          others.push(item);
+          return;
+        }
+        if (!groups[year]) {
+          groups[year] = [];
+          years.push(year);
+        }
+        groups[year].push(item);
+      });
+
+      years.sort(function (a, b) {
+        return b - a;
+      });
+
+      list.innerHTML = "";
+
+      years.forEach(function (year) {
+        var header = document.createElement("li");
+        header.className = "pub-year-header";
+        header.textContent = String(year);
+        list.appendChild(header);
+        groups[year].forEach(function (item) {
+          list.appendChild(item);
+        });
+      });
+
+      if (others.length) {
+        var fallbackHeader = document.createElement("li");
+        fallbackHeader.className = "pub-year-header";
+        fallbackHeader.textContent = "Other";
+        list.appendChild(fallbackHeader);
+        others.forEach(function (item) {
+          list.appendChild(item);
+        });
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", groupPublicationsByYear);
+    } else {
+      groupPublicationsByYear();
+    }
+  })();
+</script>
 </body>
 </html>
-
