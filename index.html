@@ -14,10 +14,30 @@
     margin: 14px 0 6px -20px;
     font-weight: bold;
   }
+  /* Language toggle styles */
+  body.lang-en .zh { display: none; }
+  body.lang-zh .en { display: none; }
+  #lang-switch {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+    padding: 6px 14px;
+    cursor: pointer;
+    background: #0000A3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  #lang-switch:hover {
+    background: #0000d0;
+  }
 </style>
 <TITLE>Chao Wu - Ph D, Research Professor@ZJU</TITLE>
 </HEAD>
-<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000A3" VLINK="#760076" ALINK="#FF0000">
+<BODY class="lang-en" BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000A3" VLINK="#760076" ALINK="#FF0000">
+<button id="lang-switch" onclick="toggleLang()">中文</button>
 <center>
 <a name="top"></a>
 <table width="700">
@@ -43,10 +63,12 @@
 <tr>
 <td width="100"><IMG BORDER=0 ALIGN="left" SRC="images/cw.png" height=200></td>
 <td width="501" height="5">
-Chao Wu is a Research
-Professor at <a href="http://www.spa.zju.edu.cn/">School of Public Affairs</a>, Zhejiang University. He is now the director of Computational Social Science Research Center (<a href="http://mo.zju.edu.cn/css">ZJUCCS</a>). He is also a Honorary Research Fellow of <a href="https://www.imperial.ac.uk/data-science/"> Data Science Institute</a> and <a href="https://www.doc.ic.ac.uk/">Department of Computing</a>, Imperial College London, and the Director of Big Data Research Center - ZJPTCC.
+<span class="en">Chao Wu is a Research
+Professor at <a href="http://www.spa.zju.edu.cn/">School of Public Affairs</a>, Zhejiang University. He is now the director of Computational Social Science Research Center (<a href="http://mo.zju.edu.cn/css">ZJUCCS</a>). He is also a Honorary Research Fellow of <a href="https://www.imperial.ac.uk/data-science/"> Data Science Institute</a> and <a href="https://www.doc.ic.ac.uk/">Department of Computing</a>, Imperial College London, and the Director of Big Data Research Center - ZJPTCC.</span>
+<span class="zh">吴超，浙江大学<a href="http://www.spa.zju.edu.cn/">公共管理学院</a>研究员（博士生导师）。现任浙江大学计算社会科学研究中心（<a href="http://mo.zju.edu.cn/css">ZJUCCS</a>）主任，同时担任英国帝国理工学院<a href="https://www.imperial.ac.uk/data-science/">数据科学研究所</a>及<a href="https://www.doc.ic.ac.uk/">计算机系</a>荣誉研究员，以及浙江省公共政策研究院大数据研究中心主任。</span>
 <br><br>
-His main research interests is about distributed machine learning, privacy protection, and computable social analytics. A list of selected publications is available <a href="https://orcid.org/0000-0003-0885-6869">here</a>. He is also the creator of <a href="http://momodel.ai">Mo</a>, which is web-based platform for both AI modelling and eduction. 
+<span class="en">His main research interests is about distributed machine learning, privacy protection, and computable social analytics. A list of selected publications is available <a href="https://orcid.org/0000-0003-0885-6869">here</a>. He is also the creator of <a href="http://momodel.ai">Mo</a>, which is web-based platform for both AI modelling and eduction.</span>
+<span class="zh">主要研究方向包括分布式机器学习、隐私保护和可计算社会分析。部分发表论文列表可在<a href="https://orcid.org/0000-0003-0885-6869">此处</a>查看。他同时也是 <a href="http://momodel.ai">Mo</a> 平台的创始人，该平台是一个面向人工智能建模和教育的在线平台。</span> 
 
 <!--
 <br><br>
@@ -62,25 +84,25 @@ His main research interests is about distributed machine learning, privacy prote
 
 <center>
 [
-<a href="https://www.notion.so/cwzju/922ede26954944779993fb621e83eec5">Research team</a> | 
-<a href="./blog">Blog</a> | 
-<a href="https://mubu.com/doc/ydl_rbKwW0">Reading list</a> ] <br>
-[<a href="https://www.notion.so/cwzju/42ac28283e6546a28c34c8ab2066bc39">Recent talks</a> | 
-<a href="https://person.zju.edu.cn/0017053">Personal page on ZJU</a> |
-<a href="https://github.com/wuchaozju">Github page</a> <!--|
+<a href="https://www.notion.so/cwzju/922ede26954944779993fb621e83eec5"><span class="en">Research team</span><span class="zh">研究团队</span></a> | 
+<a href="./blog"><span class="en">Blog</span><span class="zh">博客</span></a> | 
+<a href="https://mubu.com/doc/ydl_rbKwW0"><span class="en">Reading list</span><span class="zh">阅读清单</span></a> ] <br>
+[<a href="https://www.notion.so/cwzju/42ac28283e6546a28c34c8ab2066bc39"><span class="en">Recent talks</span><span class="zh">近期演讲</span></a> | 
+<a href="https://person.zju.edu.cn/0017053"><span class="en">Personal page on ZJU</span><span class="zh">浙大个人主页</span></a> |
+<a href="https://github.com/wuchaozju"><span class="en">Github page</span><span class="zh">Github 主页</span></a> <!--|
 <a href="#teach">A brief biography</a>--> ]
 </center>
 <hr>
 
 <P>
 <a name="research"></a>
-<h2>Research</h2> <ul> 
-<li> <b><a href="https://galaxylearning.github.io/">Distributed AI (Galaxy Learning)</a></b>: A decentralized machine learning methodology based on Federated Learning. The research focuses on joint modelling for non-IID data, privacy protection, and data ownership and pricing. We are also developing an <a href="https://github.com/GalaxyLearning">open source framework</a> for it.</li> 
+<h2><span class="en">Research</span><span class="zh">研究方向</span></h2> <ul> 
+<li> <b><a href="https://galaxylearning.github.io/"><span class="en">Distributed AI (Galaxy Learning)</span><span class="zh">分布式人工智能（星云学习）</span></a></b>: <span class="en">A decentralized machine learning methodology based on Federated Learning. The research focuses on joint modelling for non-IID data, privacy protection, and data ownership and pricing. We are also developing an <a href="https://github.com/GalaxyLearning">open source framework</a> for it.</span><span class="zh">一种基于联邦学习的去中心化机器学习方法。研究重点包括非独立同分布数据的联合建模、隐私保护以及数据确权与定价。我们同时在开发相关的<a href="https://github.com/GalaxyLearning">开源框架</a>。</span></li> 
 <li> <b><a href="https://mo.zju.edu.cn/css">Computable Social Analytics</a></b>: Data driven methodology for social science research, including intelligent transportation, smart cites, and neuro-management, etc. We established <a href="https://mo.zju.edu.cn/css/#/pub">ZJUCCS</a> as a hub for this research.</li>
 <!--<li> Others: </li>-->
 </ul> 
 
-<b>Recent publications (full list: <a href="https://scholar.google.com/citations?user=gpTPt58AAAAJ&hl=zh-CN">Google Scholar Page</a>):</b>
+<b><span class="en">Recent publications (full list: <a href="https://scholar.google.com/citations?user=gpTPt58AAAAJ&hl=zh-CN">Google Scholar Page</a>):</span><span class="zh">近期论文（完整列表：<a href="https://scholar.google.com/citations?user=gpTPt58AAAAJ&hl=zh-CN">谷歌学术主页</a>）：</span></b>
 <ul id="publications-list">
 
 <li>
@@ -249,7 +271,7 @@ D. Wu, T. Xiao, X. Liao, J. Luo, C. Wu, S. Zhang, Y. Li, Y. Guo, <i>"When Sharin
 Xue, Zeyue, Shuang Luo, Chao Wu, Pan Zhou, Kaigui Bian, and Wei Du. <i>"Transfer Heterogeneous Knowledge Among Peer-to-Peer Teammates: A Model Distillation Approach."</i> arXiv preprint arXiv:2002.02202 (2020).
 </ul>
 
-List of publications can be found <a href="https://scholar.google.com/citations?user=gpTPt58AAAAJ&hl=en">here</a>.
+<span class="en">List of publications can be found <a href="https://scholar.google.com/citations?user=gpTPt58AAAAJ&hl=en">here</a>.</span><span class="zh">完整论文列表可在<a href="https://scholar.google.com/citations?user=gpTPt58AAAAJ&hl=en">此处</a>查看。</span>
 
 <p>
 
@@ -257,28 +279,28 @@ List of publications can be found <a href="https://scholar.google.com/citations?
 <hr>
 
 <P>
-<h2> Teaching</h2> 
-Courses in ZJU:
+<h2><span class="en">Teaching</span><span class="zh">教学</span></h2> 
+<span class="en">Courses in ZJU:</span><span class="zh">浙江大学课程：</span>
 <ul> 
-<li> <a href="https://www.notion.so/cwzju/DAML-for-PA-7cdb5a064ea847d197a64a2aa8d96079">Data analysis and modelling for PA (including UPA): <a href="http://10.72.100.6:82">Course projects</a> (accessed within ZJU) </a></li> 
-<li><a href="https://mo.zju.edu.cn/classroom/class/ai_sys_2020">AI algorithm and system</a>
-<li><a href="https://mo.zju.edu.cn/classroom/class?id=6034e0aa844f3747f922a434">Introduction to AI (Spring/Summer semester 2021)</a></li>
-<li> <a href="https://mo.zju.edu.cn/classroom/class/zju_nb_ai_2020">Machine learning algorithms and platforms (for School of Software Engineering)</a></li>
-<li>Smart Emergency Management</li>
-<li> Short Course: Data Driven Social Analytics </li>
+<li> <a href="https://www.notion.so/cwzju/DAML-for-PA-7cdb5a064ea847d197a64a2aa8d96079"><span class="en">Data analysis and modelling for PA (including UPA)</span><span class="zh">公共管理数据分析与建模（含UPA）</span></a>: <a href="http://10.72.100.6:82"><span class="en">Course projects</span><span class="zh">课程项目</span></a> <span class="en">(accessed within ZJU)</span><span class="zh">（需在浙大校内访问）</span></li> 
+<li><a href="https://mo.zju.edu.cn/classroom/class/ai_sys_2020"><span class="en">AI algorithm and system</span><span class="zh">人工智能算法与系统</span></a>
+<li><a href="https://mo.zju.edu.cn/classroom/class?id=6034e0aa844f3747f922a434"><span class="en">Introduction to AI (Spring/Summer semester 2021)</span><span class="zh">人工智能导论（2021春夏学期）</span></a></li>
+<li> <a href="https://mo.zju.edu.cn/classroom/class/zju_nb_ai_2020"><span class="en">Machine learning algorithms and platforms (for School of Software Engineering)</span><span class="zh">机器学习算法与平台（软件学院）</span></a></li>
+<li><span class="en">Smart Emergency Management</span><span class="zh">智慧应急管理</span></li>
+<li><span class="en">Short Course: Data Driven Social Analytics</span><span class="zh">短期课程：数据驱动的社会分析</span></li>
 </ul> 
 
-We organize the summer school of "Data Driven Social Science Research" each year. Please find more details <a href="http://summerschool.momodel.ai:8899/course/">here</a>.
+<span class="en">We organize the summer school of "Data Driven Social Science Research" each year. Please find more details <a href="http://summerschool.momodel.ai:8899/course/">here</a>.</span><span class="zh">我们每年组织"数据驱动的社会科学研究"暑期学校，详情请见<a href="http://summerschool.momodel.ai:8899/course/">此处</a>。</span>
 <br><br>
 <hr>
 
 <P>
-<h2> Projects</h2> 
+<h2><span class="en">Projects</span><span class="zh">项目</span></h2> 
 <ul> 
-<li> <b>Mo</b>: <a href="https://momodel.ai">Mo</a> is a web-based platform for both AI modelling and eduction. In addition to the public version. It also has <a href="http://mo.zju.edu.cn">ZJU version</a>, <a href="https://uni.momodel.cn">university version</a>, <a href="https://hv.momodel.cn">higher vocational education version</a>, <a href="https://edu.momodel.cn">high school version</a>, and <a href="https://k12.momodel.cn">K-12 version</a>. </li> 
-<li> <b><a href="https://galaxylearning.github.io/">Distributed AI Platform</a></b>: This work has been funded by National Natural Science Foundation of China.</li>
-<li> <b>Intelligent Transportation</b>: Some examples can be found <a href="https://mp.weixin.qq.com/s/bvK4OxrKL8BvrdKw7-RYpg">here</a>.</li>
-<li><b>Social Simulation with Multi-Agent Reinforcement Learning</b></li>
+<li> <b>Mo</b>: <span class="en"><a href="https://momodel.ai">Mo</a> is a web-based platform for both AI modelling and eduction. In addition to the public version. It also has <a href="http://mo.zju.edu.cn">ZJU version</a>, <a href="https://uni.momodel.cn">university version</a>, <a href="https://hv.momodel.cn">higher vocational education version</a>, <a href="https://edu.momodel.cn">high school version</a>, and <a href="https://k12.momodel.cn">K-12 version</a>.</span><span class="zh"><a href="https://momodel.ai">Mo</a> 是一个面向人工智能建模和教育的在线平台。除公开版本外，还提供<a href="http://mo.zju.edu.cn">浙大版</a>、<a href="https://uni.momodel.cn">高校版</a>、<a href="https://hv.momodel.cn">高职版</a>、<a href="https://edu.momodel.cn">高中版</a>和<a href="https://k12.momodel.cn">K-12版</a>。</span></li> 
+<li> <b><a href="https://galaxylearning.github.io/"><span class="en">Distributed AI Platform</span><span class="zh">分布式人工智能平台</span></a></b>: <span class="en">This work has been funded by National Natural Science Foundation of China.</span><span class="zh">该项目由国家自然科学基金资助。</span></li>
+<li> <b><span class="en">Intelligent Transportation</span><span class="zh">智能交通</span></b>: <span class="en">Some examples can be found <a href="https://mp.weixin.qq.com/s/bvK4OxrKL8BvrdKw7-RYpg">here</a>.</span><span class="zh">部分案例可在<a href="https://mp.weixin.qq.com/s/bvK4OxrKL8BvrdKw7-RYpg">此处</a>查看。</span></li>
+<li><b><span class="en">Social Simulation with Multi-Agent Reinforcement Learning</span><span class="zh">基于多智能体强化学习的社会仿真</span></b></li>
 </ul> 
 <IMG BORDER=20 ALIGN="center" SRC="images/ZJUCSS-transportation.jpeg" height=400>
 
@@ -327,35 +349,35 @@ For the <b> Public Affairs College:</b>
 <a name="contact"></a>
 -->
 
-<h2>Vacancies</h2>
-<br/>I am looking for self-motivated Postdoc/PhD/Master/Intern applicants interested in developing novel theories, algorithms and applications in the following areas: machine learning (especially federated learning), data pricing, computational social science, and public administration. Prospective students should have a good first degree in related disciplines.
+<h2><span class="en">Vacancies</span><span class="zh">招生招聘</span></h2>
+<br/><span class="en">I am looking for self-motivated Postdoc/PhD/Master/Intern applicants interested in developing novel theories, algorithms and applications in the following areas: machine learning (especially federated learning), data pricing, computational social science, and public administration. Prospective students should have a good first degree in related disciplines.</span><span class="zh">课题组长期招收博士后、博士、硕士研究生及实习生，研究方向包括：机器学习（特别是联邦学习）、数据定价、计算社会科学和公共管理。欢迎具有相关学科背景的优秀学生申请。</span>
 
 <p>
 
 
-<h2>Contact Information</h2>
+<h2><span class="en">Contact Information</span><span class="zh">联系方式</span></h2>
 <p>
 <div align="left">
   <table border="0" width="600" cellpadding="0" cellspacing="0">
     
     <tr>
-      <td width="401" height="5"> Office 413, School of Public Affairs</td>
+      <td width="401" height="5"><span class="en">Office 413, School of Public Affairs</span><span class="zh">公共管理学院413办公室</span></td>
       <td width="200" height="5"></td>
     </tr>
     <tr>
-      <td width="401" height="5">Zijingang Campus</td>
-      <td width="200" height="5">Email <A HREF="mailto:chao.wu@zju.edu.cn">chao.wu@zju.edu.cn</A> </td>
+      <td width="401" height="5"><span class="en">Zijingang Campus</span><span class="zh">紫金港校区</span></td>
+      <td width="200" height="5"><span class="en">Email</span><span class="zh">邮箱</span> <A HREF="mailto:chao.wu@zju.edu.cn">chao.wu@zju.edu.cn</A></td>
     </tr>
     <tr>
-      <td width="401" height="5">Hangzhou, 310058 CN</td>
-      <td width="200" height="5">Tel: +86 571 56336960</td>
+      <td width="401" height="5"><span class="en">Hangzhou, 310058 CN</span><span class="zh">中国杭州，310058</span></td>
+      <td width="200" height="5"><span class="en">Tel</span><span class="zh">电话</span>: +86 571 56336960</td>
     </tr>
   
   </table>
 </div>
 <hr>
 <center>
-[ <a href="http://mo.zju.edu.cn/css">Social Analytics Platform</a> | 
+[ <a href="http://mo.zju.edu.cn/css"><span class="en">Social Analytics Platform</span><span class="zh">社会分析平台</span></a> | 
   <a href="http://www.imperial.ac.uk/">Imperial College London</a> | 
   <a href="http://momodel.ai/">MO</a> ]
 </center>
@@ -445,6 +467,31 @@ For the <b> Public Affairs College:</b>
       document.addEventListener("DOMContentLoaded", groupPublicationsByYear);
     } else {
       groupPublicationsByYear();
+    }
+  })();
+</script>
+<script>
+  function toggleLang() {
+    var body = document.body;
+    var btn = document.getElementById('lang-switch');
+    if (body.classList.contains('lang-en')) {
+      body.classList.remove('lang-en');
+      body.classList.add('lang-zh');
+      btn.textContent = 'EN';
+      localStorage.setItem('lang', 'zh');
+    } else {
+      body.classList.remove('lang-zh');
+      body.classList.add('lang-en');
+      btn.textContent = '中文';
+      localStorage.setItem('lang', 'en');
+    }
+  }
+  (function () {
+    var savedLang = localStorage.getItem('lang');
+    if (savedLang === 'zh') {
+      document.body.classList.remove('lang-en');
+      document.body.classList.add('lang-zh');
+      document.getElementById('lang-switch').textContent = 'EN';
     }
   })();
 </script>
